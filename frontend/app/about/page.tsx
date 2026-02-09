@@ -84,7 +84,7 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold mb-4">Have Questions?</h2>
         <p className="text-gray-300 mb-6">Get in touch with us for any inquiries</p>
         <div className="flex gap-4 justify-center flex-wrap">
-          <WhatsAppButton message="Hi! I'd like to know more about your boutique." variant="secondary" />
+          <WhatsAppButton message="Hi! I'd like to know more about your boutique." variant="outline" />
           <Link
             href="/contact"
             className="px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-100 transition"
