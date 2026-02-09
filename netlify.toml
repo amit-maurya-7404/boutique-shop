@@ -1,0 +1,13 @@
+[build]
+  # Build from frontend folder
+  command = "cd frontend && npm ci && npm run build"
+  publish = "frontend/.next"
+  functions = "frontend/.netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[context.production.environment]
+  # Example environment variables (set real values in Netlify UI)
+  NEXT_PUBLIC_API_URL = "https://your-backend.example.com/api"
+  NEXT_PUBLIC_WHATSAPP_NUMBER = "919137290903"
