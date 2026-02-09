@@ -1,0 +1,218 @@
+// QUICK START GUIDE
+// ==================
+
+/*
+1. INSTALL DEPENDENCIES
+
+   Backend:
+   $ cd backend
+   $ npm install
+
+   Frontend:
+   $ cd frontend
+   $ npm install
+
+2. SETUP ENVIRONMENT VARIABLES
+
+   Backend (.env):
+   - Copy from .env.example
+   - Set MONGODB_URI to your MongoDB instance
+   - Keep default JWT_SECRET for development
+
+   Frontend (.env.local):
+   - Copy from .env.example
+   - API_URL should point to your backend
+
+3. START DEVELOPMENT SERVERS
+
+   Backend (from /backend directory):
+   $ npm run dev
+   Server will run on http://localhost:5000
+
+   Frontend (from /frontend directory):
+   $ npm run dev
+   Site will run on http://localhost:3000
+
+4. TEST THE APPLICATION
+
+   Public Website:
+   - Visit http://localhost:3000
+   - Browse products at /shop
+   - View offers at /offers
+   - Check reviews at /reviews
+
+   Admin Panel:
+   - Go to /admin/login
+   - Use credentials:
+     Email: admin@boutique.com
+     Password: AdminPassword123
+   - Manage products, categories, offers, reviews
+
+5. API TESTING
+
+   Test endpoints using curl or Postman:
+
+   Get all products:
+   $ curl http://localhost:5000/api/products
+
+   Admin login:
+   $ curl -X POST http://localhost:5000/api/admin/login \\
+     -H "Content-Type: application/json" \\
+     -d '{"email":"admin@boutique.com","password":"AdminPassword123"}'
+
+   Create product (requires token):
+   $ curl -X POST http://localhost:5000/api/products \\
+     -H "Content-Type: application/json" \\
+     -H "Authorization: Bearer YOUR_TOKEN" \\
+     -d '{...product data...}'
+
+6. DATABASE SEEDING
+
+   To populate sample data:
+   $ cd backend
+   $ npm run seed
+
+   This creates:
+   - 1 admin user
+   - 4 categories
+   - 5 products
+   - 4 reviews
+   - 2 offers
+
+7. PROJECT STRUCTURE
+
+   backend/src/
+   ├── controllers/   -> Business logic
+   ├── models/        -> Mongoose schemas
+   ├── routes/        -> API endpoints
+   ├── middleware/    -> Auth & errors
+   └── utils/         -> Helpers
+
+   frontend/app/
+   ├── (public pages) -> shop, offers, reviews, about, contact
+   ├── admin/         -> Protected admin pages
+   └── components/    -> Reusable React components
+
+8. KEY FILES TO UNDERSTAND
+
+   Backend:
+   - backend/src/index.ts -> Server entry point
+   - backend/src/models/*.ts -> Database schemas
+   - backend/src/routes/*.ts -> API endpoints
+
+   Frontend:
+   - frontend/app/layout.tsx -> Root layout
+   - frontend/lib/api.ts -> API client
+   - frontend/components/ -> Reusable components
+
+9. TYPESCRIPT EVERYWHERE
+
+   All code is written in TypeScript:
+   - Backend: src/types/index.ts defines all interfaces
+   - Frontend: types/index.ts for React types
+   - Mongoose schemas include TypeScript interfaces
+   - All API responses are typed
+
+10. CUSTOMIZATION EXAMPLES
+
+    Change colors:
+    - Edit frontend/tailwind.config.js
+
+    Add new API endpoint:
+    - Create controller in backend/src/controllers/
+    - Add route in backend/src/routes/
+    - Create API method in frontend/lib/api.ts
+
+    Add new page:
+    - Create .tsx file in frontend/app/
+    - Use existing components
+    - Add route to navigation
+
+11. DEPLOYMENT CHECKLIST
+
+    Before deploying:
+    ✅ Change JWT_SECRET in backend
+    ✅ Update CORS_ORIGIN in backend
+    ✅ Set MONGODB_URI to production DB
+    ✅ Update API_URL in frontend .env
+    ✅ Build both apps: npm run build
+    ✅ Test all features
+    ✅ Check error logs
+
+12. PRODUCTION BUILD
+
+    Backend:
+    $ npm run build
+    $ npm start
+
+    Frontend:
+    $ npm run build
+    $ npm run start
+
+13. COMMON TASKS
+
+    Add a new category:
+    1. Use admin panel at /admin/categories/new
+    2. Or call API: POST /api/categories
+
+    Add a new product:
+    1. Use admin panel at /admin/products/new
+    2. Or call API: POST /api/products
+
+    Add a new offer:
+    1. Use admin panel at /admin/offers/new
+    2. Or call API: POST /api/offers
+
+    Add customer review:
+    1. Use admin panel at /admin/reviews/new
+    2. Or call API: POST /api/reviews
+
+14. TROUBLESHOOTING
+
+    Backend won't start:
+    - Check MongoDB is running
+    - Verify MONGODB_URI in .env
+    - Check port 5000 is available
+
+    Frontend can't reach API:
+    - Verify backend is running
+    - Check NEXT_PUBLIC_API_URL in .env.local
+    - Check CORS settings in backend
+
+    Authentication fails:
+    - Verify credentials in admin login form
+    - Check JWT_SECRET matches backend/frontend
+    - Clear localStorage and try again
+
+15. HELPFUL COMMANDS
+
+    Backend:
+    npm run dev        -> Start with hot reload
+    npm run build      -> Compile TypeScript
+    npm run seed       -> Populate sample data
+    npm start          -> Run production build
+
+    Frontend:
+    npm run dev        -> Start with hot reload
+    npm run build      -> Build for production
+    npm run start      -> Run production build
+    npm run lint       -> Check code quality
+
+    Database:
+    # Connect to MongoDB
+    mongosh
+    use boutique-shop
+    db.products.find()
+
+16. NEXT STEPS
+
+    1. Read the README.md for full documentation
+    2. Explore the code structure
+    3. Test all public pages
+    4. Login to admin panel
+    5. Create and manage test content
+    6. Customize for your needs
+    7. Deploy when ready
+
+Happy building! 🚀
+*/
